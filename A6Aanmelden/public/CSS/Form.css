@@ -1,0 +1,432 @@
+ /*-----HOME-----*/
+
+html, body { margin:0; height:100%; font-family: 'Roboto', sans-serif; font-size: 15px;}
+body {
+font-family: "PT Sans", sans-serif;
+font-size: 16px;
+line-height: 28px; 
+}
+h1, h2, h3, h4, h5, ul, p {
+   margin:0;
+   padding:0; 
+}
+h1, h2 {
+/*font-family: "PT Sans";*/
+font-size: 16px;
+margin-bottom: 26px;
+}
+h1, h2, h3, h4, h5, h6 {
+margin: 2em 0;
+padding: 0;
+font-weight: 700;
+margin-bottom: 20px;
+}
+p {
+color: #888;
+/*font-family: "PT Sans";*/
+font-size: 16px;
+line-height: 28px; 
+}
+?family=entypo:12
+.entypo-facebook:before {
+  content: "\f30c";
+}
+
+nav ul li a:hover { 
+  background: #f9f9f9; 
+}
+a:hover { 
+  color: #27CFC3;
+}
+div {
+box-sizing: border-box;
+}
+.texthome a:hover { 
+  border-bottom: 1px dashed #ffffff; 
+}
+#over_vitalis #inter>div:nth-child(2) {
+   display: none; 
+}
+.stepshorizontal a:hover, .stepshorizontal a.current_over_vitalis { 
+  color: #ffffff; 
+  background-color: #8cc63e; 
+}
+
+.activitiesopened div span a:hover { 
+  text-decoration: underline; 
+}
+
+.verhaallijst a:hover { 
+  text-decoration:underline; 
+  color: #8cc63e; 
+}
+
+#kind_vitalis h3:hover, #kind_vitalis .selectedkind_vitalis { 
+  background-color: #00adef; 
+  color: #ffffff; 
+}
+#vrijwilliger_vitalis h3:hover, #vrijwilliger_vitalis .selectedvrijwilliger_vitalis { 
+  background-color: #ed1846; 
+  color: #ffffff; 
+}
+/*** AANMELDEN ***/
+
+.home button:hover, .home #vrijwilliger_vitalis button:hover { 
+  background-color: #3c2351; 
+  color:#99d0c1;
+}
+
+#vrijwilliger_vitalis .slide a:hover { 
+  color: rgba(255,255,255,1); 
+}
+
+.nieuwsPagina a:hover { 
+  text-decoration:underline; 
+}
+
+.doneeronline a:hover { 
+  background-color: #666666; 
+}
+
+#samenwerkingspartners_vitalis tr td:first-child a:hover { 
+  border: 1px solid #666666; 
+}
+
+.home #contact_vitalis .submit input:hover { 
+  background-color: #666666; 
+}
+/*-----AFTER LOGIN-----*/
+
+
+.fotoAlbumLijst div h3 { 
+  font-size:12px; 
+  padding-top: 20px; 
+}
+
+#foto_album_vitalis .arrows { 
+  width: 100%; 
+  margin-left: -5%; 
+}
+
+/*------------------------------------------END - AFTER LOGIN---------------------------------------------------*/
+
+
+/*-----FORM-----*/
+body.form { 
+height: 100%; 
+text-align:center; 
+margin: 0px auto; 
+padding: 0px; 
+font-weight: 500; 
+font-size: 11px;  
+background-image: url(images/backgroundform.jpg); 
+background-color: rgba(0,173,239,0.4); 
+background-repeat: repeat; 
+background-size: 100% auto;  
+}
+header{ 
+box-shadow: 1px 1px 6px #a1a1a1; 
+margin: 0px auto; 
+padding: 0px; 
+width: 750px; 
+height: 130px; 
+background-color:#ffffff; 
+margin-bottom:5px; 
+}
+header h1{ 
+margin-top:10px; 
+}
+header img { 
+margin-top:20px; 
+}
+
+.form #container { 
+box-shadow: 1px 1px 6px #a1a1a1; 
+text-align: left; 
+margin: 0px auto; 
+padding: 0px; 
+width:750px; 
+height: auto !important; 
+background-color:#ffffff; 
+padding-bottom: 10px; 
+}
+
+.steps { 
+height: 65px; 
+padding-top:30px; 
+}
+.stepsback { 
+background-color: rgba(249,0,51,0.5); 
+height: 2px; 
+margin: 10px 20px; 
+position:relative; 
+}
+.stepsback div { 
+  width:9%; 
+  float:left; 
+  margin-top:-8px; 
+  }
+  .stepsback div a { 
+  background-image: url(images/empty.png); 
+  background-repeat:no-repeat; 
+  margin:0 auto; 
+  display:block; 
+  height:19px; 
+  width:19px; 
+  }
+  .stepsback div.active a { 
+  background-image: url(images/active.png); 
+  }
+  .stepsback div:first-child a { 
+  margin-left: -1px; 
+  }
+  .stepsback div:last-child a { 
+  position: absolute; 
+  right: -1px; 
+  }
+.stepsback div a:hover { 
+background-image: url(images/hoverstep.png); 
+transition: background-image 0.5s; 
+}
+
+div#interform fieldset { 
+border: 0; 
+padding: 2%; 
+margin: 0 auto; 
+width: 92%; 
+margin-bottom:25px; 
+}
+div#interform fieldset fieldset { 
+width: 96%; 
+border: 1px dashed #d4d4d4; 
+}
+div#interform fieldset legend { 
+font-weight: bold; 
+font-size: 12px; 
+letter-spacing:2px; 
+color: #ed1846; 
+margin-bottom: 5px; 
+text-transform: uppercase; 
+background-color: #ffffff; 
+}
+div#interform fieldset fieldset legend { 
+  text-align: right; 
+  color: #666666; 
+  font-weight: normal; 
+  text-transform: none; 
+}
+fieldset div div { 
+  margin-top: 4px; 
+}
+
+.hidden { 
+  display: none; 
+}
+.entry { 
+  margin-bottom:20px; 
+  width: 95%; 
+  position: relative; 
+}
+.clear {
+  clear: both;
+}
+
+
+div#interform label, div#interform input, div#interform textarea { 
+  width:97%; 
+  font-family: 'Roboto', sans-serif; 
+  font-size: 15px; 
+  font-weight:500; 
+  border-radius: 0; 
+}
+div#interform label { 
+  width:100%; 
+  font-weight:400; 
+  display: block; 
+  margin-bottom:3px; 
+}
+input {  
+  padding: 4px 22px 4px 2px; 
+  border: 1px solid #c1c1c1;  
+}
+div#interform input[type=checkbox], div#interform input[type=radio] { 
+  width: auto; 
+}
+div#interform textarea { 
+  height: 50px; 
+  width: 94%; 
+  padding: 4px 40px 4px 2px; 
+  margin-bottom: 25px; 
+  resize: none; 
+  border: 1px solid #c1c1c1; 
+  position:relative; 
+}
+input:focus, textarea:focus, button:focus { 
+  outline:0; 
+  border-color: #858585; 
+}
+div#interform input.formatDate, 
+div#interform input.formatNumeric {
+width: 90px;
+text-align: right;
+padding: 4px;
+}
+
+/* input/div 50%*/
+
+/* input/div 25%*/
+.tfive { 
+  width:21%; 
+  float:left; 
+  margin-right: 3.7%; 
+}
+div#interform .tfive input { 
+  width:88%; 
+}
+
+div#interform .radio label, div#interform .radio input { 
+  /*width: auto;*/ 
+  display: inline; 
+  margin-right:8px; 
+  cursor:pointer; 
+}
+div#interform .radio label { 
+  margin-right:35px; 
+}
+
+.ui-datepicker { 
+  height:auto !important; 
+  font-family: 'Raleway', sans-serif; 
+}
+.ui-widget-header { 
+  background: #e1e1e1; 
+  color: #656565; 
+}
+.ui-datepicker-title select {
+  font-family: 'Raleway', sans-serif; 
+  font-weight:500;
+}
+.ui-icon-circle-triangle-w { 
+  background-position: -97px 0; 
+}
+.ui-state-default, .ui-widget-content .ui-state-default, .ui-widget-header .ui-state-default { 
+  font-weight:500; 
+}
+.ui-widget-content { 
+  color: #f90033;
+  color:#6c6c6c; 
+}
+table { 
+  border-collapse: separate; 
+  border-spacing: 6px; 
+}
+table tr th { font-size:13px; font-weight:400; text-align:left; }
+table tr th { text-align: center; letter-spacing: 0.5px; }
+table tr td { width:20%; }
+
+div#interform table.beschikbaar {width: 50%; border-spacing: 1px;}
+div#interform table.beschikbaar th {background-color: #99d0c1; text-align: center; width: 25%;}
+div#interform table.beschikbaar td {text-align: center}
+div#interform table.beschikbaar td input[type=checkbox]{margin: 0 auto;}
+
+div#interform fieldset td:nth-child(2), div#interform fieldset td:nth-child(5), div#interform table tr td:last-child { width: 0%; text-align: center;}
+div#interform table tr td:nth-child(4) { text-align: center; width: 8%; min-width: 46px; }
+div#interform table tr td:last-child { cursor: pointer; font-size: 20px; color: #ed1846; }
+div#interform table input { padding: 4px 2px; }
+div#interform .previousnext input { -webkit-appearance: none; padding: 4px 2px; background-color: #a4a4a4; width:35%; float:left; color:#ffffff; border:0; cursor:pointer; border: 1px solid #ffffff; font-size: 18px; }
+div#interform .previousnext input:last-child { float:right; }
+div#interform .previousnext input:hover { background-color:#e4002f; }
+
+div#interform .submit input { -webkit-appearance: none; width:45%; cursor: pointer; background-color: #e4002f; color: #ffffff; border:0; padding: 10px 0; }
+div#interform .submit input:last-child { float:right; }
+div#interform .submit input:hover { background-color: #a80022; }
+
+#RequiredInfo { display:none; width: 96%; margin: 0 auto; font-size:13px; margin-bottom: 20px; line-height: 18px; }
+#RequiredInfo span { font-size:25px; color: #f90033; }
+body.form fieldset p { font-size:15px; }
+.infobubble, .infobubbletxtarea { position: absolute; z-index: 2; width: 80%; padding: 7px 15px; background: #e9e9e9; -webkit-border-radius: 6px; -moz-border-radius: 6px; border-radius: 6px; right: -16px; top: 55px; font-size:11px; line-height:16px; }
+
+
+/*------------------------------------------END FORM---------------------------------------------------*/
+
+/*------------------------------------------MEDIA QUERIES---------------------------------------------------*/
+
+@media (max-width: 1200px) {
+nav ul { padding-top: 23px; }
+}
+@media (max-width: 1100px) 
+{
+.sponsorshome img { width: 100%; }
+}
+@media (max-width: 900px) {
+nav ul { display:none; }
+body.home .logonav h1 { margin-top: -53px; }
+.logonav ul { -webkit-box-shadow: 0px 5px 7px 0px rgba(50, 50, 50, 0.2); -moz-box-shadow: 0px 5px 7px 0px rgba(50, 50, 50, 0.2);  box-shadow: 0px 5px 7px 0px rgba(50, 50, 50, 0.2); }
+nav .menuright { display: block; right: 0; position: absolute; padding: 30px 20px 13px 20px; background-color: white; margin: 0px !important; top: 23px; margin-top: 11px; z-index: -1; }
+nav .menuright span { font-size: 32px; color: #00aeef; font-weight: bold; }
+nav ul { background-color: white; padding-top: 0px; }
+div#top li { display: block; padding-bottom: 8px; margin-bottom: 0px; text-align: right; margin-right: 30px;}
+div#top li:first-child { margin-top: 4%; }
+div#top li:last-child { padding-bottom: 15px; }
+.event div:nth-child(2) { display: none; }
+#over_vitalis { padding: 80px 0 60px 0; }
+}
+
+@media (max-width: 768px) {
+.sponsorshome img { width: 75%; }
+.logotop { display:none !important; }
+#over_vitalis .leftimg, #vrijwilliger_vitalis .leftimg { margin-left: 60px; text-align: left; width: calc(81% - 60px); }
+#vrijwilliger_vitalis .leftimg .slide { margin-left: 0; }
+.verhalenopened>h2, .verhaallijst { margin-left: 60px; width: calc(97% - 60px); }
+#nieuwslijst .arrows { margin-left: 13%; }
+.larger { width: calc(96% - 6px); }
+#medewerkers_vitalis, .nieuwstitle, #sponsors_vitalis #inter, #samenwerkingspartners_vitalis #inter, #agenda_vitalis #inter, .contact { margin-left: 60px; width: 81%; }
+#samenwerkingspartners_vitalis table tbody tr td { width: 90% !important; border-collapse: collapse; display: block;}
+#samenwerkingspartners_vitalis table tbody tr td a { width: 100% !important; }
+#samenwerkingspartners_vitalis table tbody tr td:last-child { margin-bottom: 25px; }
+.logotop img { width: 100px; }
+.contactinfo, .home .contact form { width: 100%; }
+}
+
+@media (max-width: 630px) {
+.topmenu a:first-child { display: none; }
+.topmenu div.social { margin-right:30px; }
+.topmenu a img { margin: 0 4px; }
+.logonav { width: 98%; }
+.logonav h1 img { width: 145px; }
+#homepage h2 { font-size: 18px; }
+#welkom_maatje .textwelkom, .textwelkom .text { -ms-transform: skewX(0deg); -webkit-transform: skewX(0deg); transform: skewX(0deg); }
+}
+
+@media (max-width: 480px) {
+.backgroundlogin div { right: 5px; width: 240px; }
+.backgroundlogin div:after { left: 202px; }
+.home h2 { font-size: 17px; }
+#left { display:none; }
+#kind_vitalis, #vrijwilliger_vitalis, #medewerkers_vitalis, #nieuwslijst, #sponsors_vitalis, #samenwerkingspartners_vitalis, #agenda_vitalis, #contact_vitalis { padding: 40px 0 40px 0; }
+#over_vitalis .leftimg, #vrijwilliger_vitalis .leftimg, .righttext, .rightimg, .verhalenopened h2, .verhaallijst, .activitiesopened, #medewerkers_vitalis, .nieuwstitle, #sponsors_vitalis #inter, #samenwerkingspartners_vitalis #inter, #agenda_vitalis #inter, #contact_vitalis #inter h2, .contact { margin-left: 15px; }
+.leftimg, #over_vitalis .leftimg, #vrijwilliger_vitalis .leftimg { width: 90%; }
+.leftimg>img, .rightimg>img { max-width: 100%; width: 100%; }
+#vrijwilliger_vitalis .slide { width: calc(100% + 6px); }
+.righttext, #sponsors_vitalis #inter  { width: calc(100% - 29px); }
+.verhaallijst p.green, #sponsors_vitalis .logosponsors div { width: 100%; }
+.home #kind_vitalis input, .home #vrijwilliger_vitalis input  { width:calc(100% - 6px); margin-bottom: 10px; }
+.verhalenItem h2 { margin-left:0; }
+#nieuwslijst .arrows { margin-left: 2%; }
+#samenwerkingspartners_vitalis #inter { width: calc(95% - 15px); }
+#samenwerkingspartners_vitalis table tbody tr td { width: 100% !important;}
+.contact { width: 90%; }
+.arrows { margin-left: 15px; width: 93%; }
+/*----------MENUPOSITIONFIXEDTOP------------*/
+.top {   height: 35px; padding-top: 5px; }
+nav { max-height: 20px; }
+nav .menuright { top: 0px; }
+.logonav { position: fixed; padding: 0 1%; background-color: white; height: 80px; -webkit-box-shadow: 0px 3px 7px 0px rgba(50, 50, 50, 0.2); -moz-box-shadow: 0px 3px 7px 0px rgba(50, 50, 50, 0.2); box-shadow: 0px 3px 7px 0px rgba(50, 50, 50, 0.2); }
+body.home .logonav h1 { margin-top: 9px; }  
+div#top li:first-child { margin-top: 5%; }
+}
+
+@media (max-width: 355px)
+{
+#top .social { display: none; }
+}
