@@ -46,5 +46,6 @@ add_shortcode('vwAanmelden', 'fVWAanmelden');
     $html .= '<p id="vwMessage"></p></form>';
     return $html;
 }
+echo "hoi";
 
 ?> 
