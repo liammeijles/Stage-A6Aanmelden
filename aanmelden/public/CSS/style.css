@@ -1,4 +1,4 @@
-#vwSubmit{
+#vwSubmit, #dnSubmit{
   margin-top: 5%;
 }
 #nb, #labeleen{
@@ -21,13 +21,16 @@ legend{
 form {
   width: 80%;
 }
-#dnAkkoord {
+#dnAkkoord, #vwakkoord{
   padding: 1%;
   margin: 1%;
 }
 #vwAkkoord, #vwEmail {
   margin-top: 6%;
 }
-#vwAkkoord, #vwEmail {
+#dnAkkoord, #dnEmail {
+  margin-top: 6%;
+}
+#dnIntro, #vwIntro {
   margin-top: 6%;
 }
