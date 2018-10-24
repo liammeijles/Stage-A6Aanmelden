@@ -25,7 +25,7 @@ function IsEmail(email) {
           
         $('#dnSubmit').css({'background':'url(isend.png) no-repeat 142px center' , 'background-color':'#666666' , '-webkit-transition':'1s' , 'transition':'1s'});
           
-        $.post("dnReqAanmelden.json", {
+        $.post("/wp-content/plugins/aanmelden/vrijwilligerAanmeldenHome.php", {
           wie: $('input[name="wie"]:checked').val(),
           email: $('#dnEmail').val()
         }, function(oResult) {
