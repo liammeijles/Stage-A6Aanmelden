@@ -1,5 +1,5 @@
 #vwSubmit{
-  margin-top: 3%;
+  margin-top: 5%;
 }
 #nb, #labeleen{
   font-size: 10px;
@@ -24,4 +24,7 @@ form {
 #dnAkkoord {
   padding: 1%;
   margin: 1%;
+}
+#vwAkkoord, #vwEmail {
+  margin-top: 6%;
 }
