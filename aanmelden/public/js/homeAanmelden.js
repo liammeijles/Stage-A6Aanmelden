@@ -35,6 +35,7 @@ function IsEmail(email) {
             $('#dnMessage').html(oResult.message);
           } else {
             $('#dnMessage').html('<span class="error">' + oResult.message + '</span>');
+            alert("bericht kon niet verstuurd worden :(")
           }
         }); 
       } catch(e) {
@@ -57,7 +58,7 @@ function IsEmail(email) {
           }
           else{
             $('#vwMessage').html(oResult.message).addClass("error"); 
-
+            alert("bericht kon niet verstuurd worden :(")
           }
         }); 
       } 
