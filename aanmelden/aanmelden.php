@@ -19,14 +19,15 @@ function fDNAanmelden($atts, $content = '', $tag){
     $html .= '<form id="dnAanmelden" action="#">';
     $html .= '<legend>Aanmeldingsformulier deelnemer:</legend>';
     $html .= '<div class="entry">';
-    $html .= '<label for="dnIntro" id="dnIntro">Voordat je de aanmelding start, is het van belang dat je kennis neemt van en akkoord gaat met onze privacyverklaring. Deze kun je <a href="#">hier</a> lezen en hier accorderen<input type="checkbox" id="dnAkkoord" name="dnAkkoord" value="OK"></label></div>';
+    $html .= '<label for="dnIntro" id="dnIntro">Als je je wilt aanmelden als deelnemer, moet je aangeven wat de aanvraag betreft, je email adres hier beneden opgeven, en akkoord gaan met onze privacy voorwaarden. Het volledige aanmeldingsformulier is te vinden in de email.</label></div>';
     $html .= '<div class="entry">';
     $html .= '<label for="wie">De aanvraag betreft:</label>';
     $html .= '<div>';
     $html .= '<label><input type="radio" name="wie" value="M">Mijzelf</label>';
     $html .= '<label><input type="radio" name="wie" value="A">Iemand die ik begeleid</label></div></div>';
     $html .= '<div class="entry">';
-    $html .= '<label class="red" for="aanEmail">E-mailadres deelnemer:</label><input type="text" name="email" id="dnEmail" placeholder="Vul hier uw email in" class="required formatEmail"><button id="dnSubmit" type="submit" disabled="disabled">Aanmelden</button></div>';
+    $html .= '<input type="text" name="email" id="dnEmail" placeholder="Vul hier uw email in" class="required formatEmail">';
+    $html .= '<label for="dnAkkoord"><input type="checkbox" id="vwAkkoord" name="vwAkkoord" value="OK">Ik heb de <a href="#">Privacy voorwaarden</a> gelezen en ga hiermee akkoord</label><button id="dnSubmit" type="submit" disabled="disabled">Aanmelden</button></div>';
     $html .= '<p id="dnMessage"></p></form>';
     return $html;
 }
