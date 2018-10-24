@@ -17,7 +17,7 @@ function IsEmail(email) {
         $("button#dnSubmit, button#vwSubmit").prop("disabled", true).css({opacity: 0.5});
       }
     });
-    //Tot hier doet hij het
+
     $("#dnAanmelden").on('click', '#dnSubmit', function() {
       try {
         if($('input[name="wie"]:checked').length == 0) throw new Error('Kun je aangeven voor wie de aanvraag gedaan wordt?');
@@ -61,7 +61,7 @@ function IsEmail(email) {
         }); 
       } 
       else {
-        alert('Er moet wél een email adres worden ingevoerd.');//voert dit niet uit
+        alert('Er moet wél een email adres worden ingevoerd.');
       }
       return false;
     });
