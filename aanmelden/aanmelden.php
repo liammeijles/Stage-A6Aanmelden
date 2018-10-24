@@ -42,8 +42,8 @@ add_shortcode('vwAanmelden', 'fVWAanmelden');
     $html .= '<div class="entry">';
     $html .= '<div>';
     $html .= '<div class="entry">';
-    $html .= '<label class="red" for="aanEmail">E-mailadres vrijwilliger:</label><input type="text" name="email" id="vwEmail" placeholder="Email" class="required formatEmail">';
-    $html .= '<label for="vwAkkoord"><input type="checkbox" id="vwAkkoord" name="vwAkkoord" value="OK">Ik heb de<a href="#">Privacy voorwaarden</a> gelezen en ga hiermee akkoord</label><button id="vwSubmit" type="submit" disabled="disabled">Aanmelden</button></div>';
+    $html .= '<input type="text" name="email" id="vwEmail" placeholder="Voer hier je email in" class="required formatEmail">';
+    $html .= '<label for="vwAkkoord"><input type="checkbox" id="vwAkkoord" name="vwAkkoord" value="OK">Ik heb de <a href="#">Privacy voorwaarden</a> gelezen en ga hiermee akkoord</label><button id="vwSubmit" type="submit" disabled="disabled">Aanmelden</button></div>';
     $html .= '<p id="vwMessage"></p></form>';
     return $html;
 }
