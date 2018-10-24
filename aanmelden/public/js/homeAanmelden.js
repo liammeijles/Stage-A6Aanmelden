@@ -48,7 +48,7 @@ function IsEmail(email) {
         
         $('#vwSubmit').css({'background':'url(isend.png) no-repeat 142px center' , 'background-color':'#666666' , '-webkit-transition':'1s' , 'transition':'1s'});
           
-        $.post("/var/www/wordpress/wp-content/plugins/aanmelden/vrijwilligerAanmeldenHome.php", {//LINK IS VERANDERD VAN INCLUDE NAAR PUBLIC
+        $.post("/wp-content/plugins/aanmelden/vrijwilligerAanmeldenHome.php", {
           email: $('#vwEmail').val(),
         }, function(oResult) {
           if(oResult.code == 1){
