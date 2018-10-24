@@ -1,7 +1,7 @@
 # Contributor Covenant Code of Conduct
 
 Ons doel
-Wij bij WP-Stage proberen altijd onze best de doen en zoveel mogelijk te leren.
+Wij bij A6Aanmelden proberen altijd onze best de doen en zoveel mogelijk te leren.
 
 Onze regels:
 
