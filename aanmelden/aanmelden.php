@@ -38,7 +38,7 @@ add_shortcode('vwAanmelden', 'fVWAanmelden');
     $html .= '<form id="vwAanmelden" action="#">';
     $html .= '<legend>Aanmeldingsformulier vrijwilliger:</legend>';
     $html .= '<div class="entry">';
-    $html .= '<label for="vwAkkoord">Voordat je de aanmelding start, is het van belang dat je kennis neemt van en akkoord gaat met onze privacyverklaring. Die kun je <a href="#">hier</a> lezen en hier accorderen<input type="checkbox" id="vwAkkoord" name="vwAkkoord" value="OK"></label></div>';
+    $html .= '<label for="vwAkkoord">Als je je wilt aanmelden als vrijwilliger, moet je je email adres hier beneden opgeven, en akkoord gaan met onze privacy voorwaarden. Het volledige aanmeldingsformulier is te vinden in de email.</label></div>';
     $html .= '<div class="entry">';
     $html .= '<div>';
     $html .= '<div class="entry">';
