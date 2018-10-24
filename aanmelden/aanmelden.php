@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 <?php
 /*
 Plugin Name:  Aanmelden
@@ -46,6 +47,4 @@ add_shortcode('vwAanmelden', 'fVWAanmelden');
     $html .= '<p id="vwMessage"></p></form>';
     return $html;
 }
-echo "Dit is een testbericht!";
-
-?> 
+echo "joehoe";
