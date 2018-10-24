@@ -36,7 +36,6 @@ function IsEmail(email) {
             $('#dnMessage').html('<span class="error">' + oResult.message + '</span>');
           }
         }); 
-        //vanaf hier (regel 39 t/m regel 67);
       } catch(e) {
         alert(e.message);
       }
@@ -44,12 +43,12 @@ function IsEmail(email) {
     });
 
     $("#vwAanmelden", "#dnAanmelden").on('click', '#vwSubmit', function() {  
-      console.log("hoi");
+
       if(IsEmail($('#vwEmail').val())){
         
         $('#vwSubmit').css({'background':'url(isend.png) no-repeat 142px center' , 'background-color':'#666666' , '-webkit-transition':'1s' , 'transition':'1s'});
           
-        $.post("/wp-content/plugins/aanmelden/vrijwilligerAanmeldenHome.php", {//LINK is VERANDERD VAN INCLUDE NAAR PUBLIC
+        $.post("/var/www/wordpress/wp-content/plugins/aanmelden/vrijwilligerAanmeldenHome.php", {//LINK IS VERANDERD VAN INCLUDE NAAR PUBLIC
           email: $('#vwEmail').val(),
         }, function(oResult) {
           if(oResult.code == 1){
@@ -60,7 +59,8 @@ function IsEmail(email) {
 
           }
         }); 
-      } else {
+      } 
+      else {
         alert('Er moet wél een email adres worden ingevoerd.');
       }
       return false;
