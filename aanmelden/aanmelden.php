@@ -26,7 +26,7 @@ function fDNAanmelden($atts, $content = '', $tag){
     $html .= '<label><input type="radio" name="wie" value="M">Mijzelf</label>';
     $html .= '<label><input type="radio" name="wie" value="A">Iemand die ik begeleid</label></div></div>';
     $html .= '<div class="entry">';
-    $html .= '<label class="red" for="aanEmail">E-mailadres deelnemer:</label><input type="text" name="email" id="dnEmail" placeholder="Email" class="required formatEmail"><button id="dnSubmit" type="submit" disabled="disabled">Aanmelden</button></div>';
+    $html .= '<label class="red" for="aanEmail">E-mailadres deelnemer:</label><input type="text" name="email" id="dnEmail" placeholder="Email invullen" class="required formatEmail"><button id="dnSubmit" type="submit" disabled="disabled">Aanmelden</button></div>';
     $html .= '<p id="dnMessage"></p></form>';
     return $html;
 }
@@ -42,7 +42,7 @@ add_shortcode('vwAanmelden', 'fVWAanmelden');
     $html .= '<div class="entry">';
     $html .= '<div>';
     $html .= '<div class="entry">';
-    $html .= '<label class="red" for="aanEmail">E-mailadres vrijwilliger:</label><input type="text" name="email" id="vwEmail" placeholder="Email" class="required formatEmail"><button id="vwSubmit" type="submit" disabled="disabled">Aanmelden</button></div>';
+    $html .= '<label class="red" for="aanEmail">E-mailadres vrijwilliger:</label><input type="text" name="email" id="vwEmail" placeholder="Email invullen" class="required formatEmail"><button id="vwSubmit" type="submit" disabled="disabled">Aanmelden</button></div>';
     $html .= '<p id="vwMessage"></p></form>';
     return $html;
 }

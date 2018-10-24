@@ -22,11 +22,11 @@ legend{
 form {
   width: 80%;
 }
-#dnAkkoord, #vwakkoord{
+#dnAkkoord, #vwAkkoord{
   padding: 1%;
   margin: 1%;
 }
-#vwAkkoord, #vwEmail {
+#vwEmail {
   margin-top: 6%;
 }
 #dnIntro, #vwIntro {
