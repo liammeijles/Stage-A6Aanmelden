@@ -17,8 +17,8 @@ function IsEmail(email) {
         $("button#dnSubmit, button#vwSubmit").prop("disabled", true).css({opacity: 0.5});
       }
     });
-    
-    $("#aanmelden").on('click', '#dnSubmit', function() {  
+    //Tot hier doet hij het
+    $("#dnAanmelden").on('click', '#dnSubmit', function() {
       try {
         if($('input[name="wie"]:checked').length == 0) throw new Error('Kun je aangeven voor wie de aanvraag gedaan wordt?');
         if(!IsEmail($('#dnEmail').val())) throw new Error('Het e-mailadres is niet ingevuld of onjuist.');
@@ -42,7 +42,7 @@ function IsEmail(email) {
       return false;
     });
 
-    $("#vwAanmelden", "#dnAanmelden").on('click', '#vwSubmit', function() {  
+    $("#vwAanmelden").on('click', '#vwSubmit', function() { 
 
       if(IsEmail($('#vwEmail').val())){
         
@@ -61,7 +61,7 @@ function IsEmail(email) {
         }); 
       } 
       else {
-        alert('Er moet wél een email adres worden ingevoerd.');
+        alert('Er moet wél een email adres worden ingevoerd.');//voert dit niet uit
       }
       return false;
     });
