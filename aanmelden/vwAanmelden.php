@@ -503,7 +503,6 @@ try{
     $oFieldset->appendChild($oDivCheck);
   }
 } catch(Exception $oError){
-  die(var_dump($_SERVER));
   if(preg_match("/\.json$/i", $_SERVER['SCRIPT_URL'])) {
     $aError = array("code" => $oError->getCode(), "message" => ($oError->getMessage()));
     die(json_encode($aError));
