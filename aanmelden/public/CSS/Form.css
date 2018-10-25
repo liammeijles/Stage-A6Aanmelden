@@ -343,7 +343,7 @@ div#interform .submit input:hover { background-color: #a80022; }
 
 #RequiredInfo { display:none; width: 96%; margin: 0 auto; font-size:13px; margin-bottom: 20px; line-height: 18px; }
 #RequiredInfo span { font-size:25px; color: #f90033; }
-.dummy { font-size:25px; color: #f90033; float: left; margin-top: 0.5px;}
+.dummy { font-size:25px; color: #f90033; float: left; margin-top: 0.5px; padding: 2px;}
 body.form fieldset p { font-size:15px; }
 .infobubble, .infobubbletxtarea { position: absolute; z-index: 2; width: 80%; padding: 7px 15px; background: #e9e9e9; -webkit-border-radius: 6px; -moz-border-radius: 6px; border-radius: 6px; right: -16px; top: 55px; font-size:11px; line-height:16px; }
 

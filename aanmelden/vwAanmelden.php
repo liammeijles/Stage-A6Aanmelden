@@ -339,7 +339,7 @@ try{
     $oInput->setAttribute('value', $aShow['vrijwilliger']['email']);
 
     /*** AANVULLENDE INFOMATIE ***/
-    /*$oDiv = $oPage->getElementById('para020101');
+    $oDiv = $oPage->getElementById('para020101');
     $cInputs = $oDiv->getElementsByTagName('input');
     $aBeschikbaar = json_decode($aShow['vrijwilliger']['dossier']['beschikbaar']);
     if(is_array($aBeschikbaar)) {
@@ -350,7 +350,7 @@ try{
       }
     }
     $oText = $oPage->getElementById('id020102');
-    $oText->nodeValue = $aShow['vrijwilliger']['dossier']['talenkennis'];*/
+    $oText->nodeValue = $aShow['vrijwilliger']['dossier']['talenkennis'];
     
     // VRAGEN
     $iFieldSetNumber = $aShow['vrijwilliger']['dossier']['status'] == 'aanvullen' || $sPlek == "stage" ? 5 : 2;
