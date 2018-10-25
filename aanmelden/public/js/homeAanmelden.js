@@ -10,10 +10,10 @@ function IsEmail(email) {
     $('#dnSubmit').css({opacity: 0.5});
     $("input#dnAkkoord, input#vwAkkoord").on('click', function() {
       if($(this).prop("checked")) {
-        $("input#dnEmail").attr("placeholder", "Voer hier uw e-mailadres in, u ontvangt per omgaande verdere instructies");
+        $("input#dnEmail, input#vwEmail").prop("disabled", false);
         $("button#dnSubmit, button#vwSubmit").prop("disabled", false).css({opacity: 1});
       } else {
-        $("input#dnEmail").attr("placeholder", "Vergeet niet onze privacyverklaring te accoderen");
+        $("input#dnEmail, input#vwEmail").prop("disabled", true);
         $("button#dnSubmit, button#vwSubmit").prop("disabled", true).css({opacity: 0.5});
       }
     });

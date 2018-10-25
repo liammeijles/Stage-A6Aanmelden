@@ -22,15 +22,12 @@ legend{
 form {
   width: 80%;
 }
-#dnAkkoord, #vwakkoord{
+#dnAkkoord, #vwAkkoord{
   padding: 1%;
   margin: 1%;
 }
-#vwAkkoord, #vwEmail {
-  margin-top: 6%;
-}
-#dnIntro, #vwIntro {
-  margin-top: -5%;
+#dnEmail, #vwEmail {
+  margin-top: 1%;
 }
 .entry {
   margin-top: 6%;

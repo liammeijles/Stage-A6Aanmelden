@@ -19,14 +19,14 @@ function fDNAanmelden($atts, $content = '', $tag){
     $html .= '<form id="dnAanmelden" action="#">';
     $html .= '<legend>Aanmeldingsformulier deelnemer:</legend>';
     $html .= '<div class="entry">';
-    $html .= '<label for="dnIntro" id="dnIntro">Voordat je de aanmelding start, is het van belang dat je kennis neemt van en akkoord gaat met onze privacyverklaring. Deze kun je <a href="#">hier</a> lezen en hier accorderen<input type="checkbox" id="dnAkkoord" name="dnAkkoord" value="OK"></label></div>';
+    $html .= '<label for="dnAkkoord" id="dnIntro">Voordat je de aanmelding start, is het van belang dat je kennis neemt van en akkoord gaat met onze privacyverklaring. Deze kun je <a href="#">hier</a> lezen en hier accorderen<input type="checkbox" id="dnAkkoord" name="dnAkkoord" value="OK"></label></div>';
     $html .= '<div class="entry">';
     $html .= '<label for="wie">De aanvraag betreft:</label>';
     $html .= '<div>';
     $html .= '<label><input type="radio" name="wie" value="M">Mijzelf</label>';
     $html .= '<label><input type="radio" name="wie" value="A">Iemand die ik begeleid</label></div></div>';
     $html .= '<div class="entry">';
-    $html .= '<label class="red" for="aanEmail">E-mailadres deelnemer:</label><input type="text" name="email" id="dnEmail" placeholder="Vul hier uw email in" class="required formatEmail"><button id="dnSubmit" type="submit" disabled="disabled" opacity="1">Aanmelden</button></div>';
+    $html .= '<label class="red" for="aanEmail">E-mailadres deelnemer:</label><input type="text" name="email" id="dnEmail" placeholder="Vul hier uw email in" class="required formatEmail" disabled><button id="dnSubmit" type="submit" disabled="disabled" opacity="1">Aanmelden</button></div>';
     $html .= '<p id="dnMessage"></p></form>';
     return $html;
 }
@@ -38,12 +38,11 @@ add_shortcode('vwAanmelden', 'fVWAanmelden');
     $html .= '<form id="vwAanmelden" action="#">';
     $html .= '<legend>Aanmeldingsformulier vrijwilliger:</legend>';
     $html .= '<div class="entry">';
-    $html .= '<label for="vwIntro" id="dnIntro">Als je je wilt aanmelden als vrijwilliger, moet je je email adres hier beneden opgeven, en akkoord gaan met onze privacy voorwaarden. Het volledige aanmeldingsformulier is te vinden in de email.</label></div>';
+    $html .= '<label for="vwAkkoord">Voordat je de aanmelding start, is het van belang dat je kennis neemt van en akkoord gaat met onze privacyverklaring. Die kun je <a href="#">hier</a> lezen en hier accorderen<input type="checkbox" id="vwAkkoord" name="vwAkkoord" value="OK"></label></div>';
     $html .= '<div class="entry">';
     $html .= '<div>';
     $html .= '<div class="entry">';
-    $html .= '<input type="text" name="email" id="vwEmail" placeholder="Voer hier uw email in" class="required formatEmail">';
-    $html .= '<label for="vwAkkoord"><input type="checkbox" id="vwAkkoord" name="vwAkkoord" value="OK">Ik heb de <a href="#">Privacy voorwaarden</a> gelezen en ga hiermee akkoord</label><button id="vwSubmit" type="submit" disabled="disabled" opacity="1" style="opacity: 0.5">Aanmelden</button></div>';
+    $html .= '<label class="red" for="aanEmail">E-mailadres vrijwilliger:</label><input type="text" name="email" id="vwEmail" placeholder="Email" class="required formatEmail" disabled><button id="vwSubmit" type="submit" disabled="disabled" opacity="1" style="opacity: 0.5">Aanmelden</button></div>';
     $html .= '<p id="vwMessage"></p></form>';
     return $html;
 }
