@@ -24,7 +24,7 @@ function IsEmail(email) {
         if(!IsEmail($('#dnEmail').val())) throw new Error('Het e-mailadres is niet ingevuld of onjuist.');
           
         $('#dnSubmit').css({'background':'url(isend.png) no-repeat 142px center' , 'background-color':'#666666' , '-webkit-transition':'1s' , 'transition':'1s'});
-          
+          alert("Uw email is verzonden!");
         $.post("/wp-content/plugins/aanmelden/vrijwilligerAanmeldenHome.php", {
           wie: $('input[name="wie"]:checked').val(),
           email: $('#dnEmail').val()
