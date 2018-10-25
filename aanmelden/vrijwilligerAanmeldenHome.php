@@ -29,7 +29,6 @@ if(isset($_POST['email'])){
     echo '<span color="red">Er is helaas iets fout gegaan bij het versturen van de email.</span>';
   }*/
   echo '{"code": 1, "message":"email is verzonden", "id" :"'.$sCode.'"}';
-  echo "email is verzonden!";
 }
 
 ?>  
