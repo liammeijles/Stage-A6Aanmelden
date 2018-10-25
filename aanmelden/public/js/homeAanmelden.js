@@ -46,7 +46,7 @@ function IsEmail(email) {
 
       if(IsEmail($('#vwEmail').val())){
         $('#vwSubmit').css({'background':'url(isend.png) no-repeat 142px center' , 'background-color':'#666666' , '-webkit-transition':'1s' , 'transition':'1s'});
-          
+          alert("Uw email is verzonden!");
         $.post("/wp-content/plugins/aanmelden/vrijwilligerAanmeldenHome.php", {
           email: $('#vwEmail').val(),
         }, function(oResult) {
