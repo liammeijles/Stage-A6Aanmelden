@@ -1,7 +1,7 @@
 <?php
 header("content-type: application/json");
 if(isset($_POST['email'])){
-  $oSoap = new SoapClient("https://budget.infomaatje.org/admin/preview/bpmsSoap.wsdl");
+  $oSoap = new SoapClient("https://dev.infomaatje.org/admin/preview/bpmsSoap.wsdl");
   
   
   $sEmail = $_POST['email'];

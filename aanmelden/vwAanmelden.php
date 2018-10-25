@@ -12,7 +12,7 @@ $sToken = rawurldecode($_REQUEST['t']);
 $sPlek = isset($_REQUEST['plek']) ? rawurldecode($_REQUEST['plek']) : "VW";
 
 function strip($sString){
-  return (magic_quotes_runtime
+  return (get_magic_quotes_runtime()
           ? stripslashes($sString)
           : $sString);
 }
@@ -36,14 +36,12 @@ function textToLines($sText){
   return $aLines;  
 }
 
-$oSoap = new SoapClient("https://budget.infomaatje.org/admin/preview/bpmsSoap.wsdl");
+$oSoap = new SoapClient("https://dev.infomaatje.org/admin/preview/bpmsSoap.wsdl");
 try{
   /*** UPDATE ***/
-  if(isset($_POST['email'])){
+  if(isset($_POST['t'])){
     $aAanmelding = array();
-    $aAanmelding['email'] = $sEmail;
     $aAanmelding['t'] = $sToken;
-    $aAanmelding['dossier'] = $_POST['dossier'];
     $aAanmelding['status'] = $_POST['status'];
 
     $aAanmelding['personen'] = array('vrijwilliger' => array(
@@ -51,29 +49,17 @@ try{
                                         'tussenvoegsel' => $_POST['input0501'],
                                         'achternaam' => $_POST['input0202'],
                                         'geslacht' => $_POST['input0203'],
-                                        'geboortedatum' => $_POST['input0204'],
-                                        'geboorteplaats' => $_POST['input0205'],
-                                        'landherkomst' => $_POST['input0206'],
                                         'postcode' => $_POST['input0208'],
                                         'huisnummer' => $_POST['input0209'],
                                         'straatnaam' => $_POST['input0208a'],
                                         'plaatsnaam' => $_POST['input0208b'],
-                                        'telefoon' => $_POST['input0210'],
                                         'mobiel' => $_POST['input0211'],
-                                        'telefoon_werk' => $_POST['input0212'],
                                         'email' => $_POST['input0213'], 
                                         'beschikbaar' => json_encode($_POST['input020101']),
                                         'talenkennis' => $_POST['input020102']
-                                    ),
-                                    'partner' => array(
-                                        'naam' => $_POST['input0214'],
-                                        'tussenvoegsel' => $_POST['input0502'],
-                                        'achternaam' => $_POST['input0215'],
-                                        'geboortedatum' => $_POST['input0216'],
-                                        'email' => $_POST['input0217']
                                     )
                                 );
-    $aAanmelding['gegevens']['referenties'][0] =  array(
+    /*$aAanmelding['gegevens']['referenties'][0] =  array(
                                     'naam' => $_POST['input0218'],
                                     'tussenvoegsel' => $_POST['input0503'],
                                     'achternaam' => $_POST['input0219'],
@@ -98,7 +84,7 @@ try{
                                     'mobiel' => $_POST['input0229a'],
                                     'email' => $_POST['input0230'],
                                     'relatie' => $_POST['input0231']
-                                );
+                                );*/
     for($i=1;$i<=$_POST['huisgenotenAantal']; $i++){
       if(!empty($_POST['input030'.$i.'0101'])){
         $aAanmelding['gegevens']['huisgenoten'][] = array(
@@ -113,7 +99,7 @@ try{
     }
     $aAanmelding['antwoorden'] = $_POST['antwoorden'];
 
-    if($_POST['input0500']=='on'){
+    if(isset($_POST['input0500']) && $_POST['input0500']=='on'){
       $aAanmelding['afronden'] = array('status' => 'aangemeld');
     }
     $aMessage = $oSoap->SetAanmeldenVrijwilliger(aToUTF8($aAanmelding));
@@ -121,7 +107,7 @@ try{
     if($aMessage['code'] != 0){
       throw new Exception($aMessage['message'], $aMessage['code']);
     }
-    if($_POST['input0500']=='on') {
+    if(isset($_POST['input0500']) && $_POST['input0500']=='on') {
       $oMailHTML = new webHTML('bevestigingsAanmeldingVrijwilligerMailHTML');
       if($sPlek == "stage") {
         $hForm = new webHTML("stagiaireAanmeldenHTML");
