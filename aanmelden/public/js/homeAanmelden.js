@@ -20,7 +20,6 @@ function IsEmail(email) {
 
     $("#dnAanmelden").on('click', '#dnSubmit', function() {
       try {
-        alert("Email is verzonden!");
         if($('input[name="wie"]:checked').length == 0) throw new Error('Kun je aangeven voor wie de aanvraag gedaan wordt?');
         if(!IsEmail($('#dnEmail').val())) throw new Error('Het e-mailadres is niet ingevuld of onjuist.');
           
@@ -46,7 +45,6 @@ function IsEmail(email) {
     $("#vwAanmelden").on('click', '#vwSubmit', function() { 
 
       if(IsEmail($('#vwEmail').val())){
-        alert("Email is verzonden!");
         $('#vwSubmit').css({'background':'url(isend.png) no-repeat 142px center' , 'background-color':'#666666' , '-webkit-transition':'1s' , 'transition':'1s'});
           
         $.post("/wp-content/plugins/aanmelden/vrijwilligerAanmeldenHome.php", {
