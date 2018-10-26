@@ -1,5 +1,6 @@
 $(document).ready(function(){
     /*** ZETTEN VAN VERPLICHTE DIVS ***/
+    $("<span class='dummy' for=''>*</span>").insertBefore(".marking");
     $('div[id^=para]').each(function() {
       if($(this).has(':input.required').length > 0){
         $(this).addClass('required');

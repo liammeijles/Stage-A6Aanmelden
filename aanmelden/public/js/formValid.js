@@ -17,7 +17,16 @@ aMessage[20010]="De waarde van het wachtwoord `^` komt niet overeen met de waard
  Function converts message to Error with descArguments, 2 possibilities : 
  - By order 1st ^ encountered  replaced with 1st argument and 2nd ^ replaced with 2nd argument &c.
  - By number all ^1 occurences encountered replaced with 1st argument and all ^3 with 3rd argument 
-*/
+
+var required = document.getElementsByClassName('required');
+var reqAsterix = document.createElement('span');
+    reqAsterix.innerHTML = '*';
+    reqAsterix.className = 'dummy';
+
+required.childNode[0].insertBefore(reqAsterix, required);
+
+<span class="dummy">* </span>*/
+
 String.prototype.toError=function() {
  var sErrorMessage=this;
  for(var __a=0;__a<arguments.length;__a++) {
