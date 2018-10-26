@@ -338,7 +338,7 @@ try{
     $oInput = $oPage->getElementById('id0213');
     $oInput->setAttribute('value', $aShow['vrijwilliger']['email']);
 
-    /*** AANVULLENDE INFORMATIE ***/
+    /*** AANVULLENDE INFOMATIE ***/
     $oDiv = $oPage->getElementById('para020101');
     $cInputs = $oDiv->getElementsByTagName('input');
     $aBeschikbaar = json_decode($aShow['vrijwilliger']['beschikbaar']);
@@ -349,6 +349,7 @@ try{
         }
       }
     }
+    
     /*
     if (!isset($_POST['dossier'])) { 
       die(var_dump($_POST['dossier']));

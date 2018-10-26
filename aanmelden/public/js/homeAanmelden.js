@@ -1,6 +1,8 @@
 if(!$){
   $ = jQuery;
 }
+
+
 function IsEmail(email) {
     var regex = /^([a-zA-Z0-9_.+-])+\@(([a-zA-Z0-9-])+\.)+([a-zA-Z0-9]{2,4})+$/;
     return regex.test(email);
@@ -24,7 +26,7 @@ function IsEmail(email) {
         if(!IsEmail($('#dnEmail').val())) throw new Error('Het e-mailadres is niet ingevuld of onjuist.');
           
         $('#dnSubmit').css({'background':'url(isend.png) no-repeat 142px center' , 'background-color':'#666666' , '-webkit-transition':'1s' , 'transition':'1s'});
-          alert("Uw email is verzonden!");
+          
         $.post("/wp-content/plugins/aanmelden/vrijwilligerAanmeldenHome.php", {
           wie: $('input[name="wie"]:checked').val(),
           email: $('#dnEmail').val()
@@ -46,12 +48,12 @@ function IsEmail(email) {
 
       if(IsEmail($('#vwEmail').val())){
         $('#vwSubmit').css({'background':'url(isend.png) no-repeat 142px center' , 'background-color':'#666666' , '-webkit-transition':'1s' , 'transition':'1s'});
-          alert("Uw email is verzonden!");
+          
         $.post("/wp-content/plugins/aanmelden/vrijwilligerAanmeldenHome.php", {
           email: $('#vwEmail').val(),
         }, function(oResult) {
           if(oResult.code == 1){
-            $('#vwMessage').html(oResult.message);
+            $('#vwMessage').html(oResult.message)
           }
           else{
             $('#vwMessage').html(oResult.message).addClass("error"); 
