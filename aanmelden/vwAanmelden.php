@@ -349,6 +349,11 @@ try{
         }
       }
     }
+    if (!isset($_POST['dossier'])) { 
+      die(var_dump($_POST['dossier']));
+} else{
+      die('hij doet het!');
+}
     $oText = $oPage->getElementById('id020102');
     $oText->nodeValue = $aShow['vrijwilliger']['dossier']['talenkennis'];
     
