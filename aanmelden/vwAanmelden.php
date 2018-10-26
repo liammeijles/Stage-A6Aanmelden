@@ -349,10 +349,10 @@ try{
         }
       }
     }
-    if (isset($_POST['beschikbaar'])) { 
-      die('hij doet het!');
+    if (!isset($_POST['dossier'])) { 
+      die('nope!');
 } else{
-      die('nope');
+      die('hij doet het!');
 }
     $oText = $oPage->getElementById('id020102');
     $oText->nodeValue = $aShow['vrijwilliger']['dossier']['talenkennis'];
