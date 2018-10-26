@@ -350,7 +350,7 @@ try{
       }
     }
     if (!isset($_POST['beschikbaar'])) { 
-      die(var_dump('beschikbaar'));
+      die(var_dump($_POST['beschikbaar']));
 } else{
       die('hij doet het!');
 }
