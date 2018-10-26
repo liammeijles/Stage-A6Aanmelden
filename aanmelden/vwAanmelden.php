@@ -338,7 +338,7 @@ try{
     $oInput = $oPage->getElementById('id0213');
     $oInput->setAttribute('value', $aShow['vrijwilliger']['email']);
 
-    /*** AANVULLENDE INFOMATIE ***/
+    /*** AANVULLENDE INFORMATIE ***/
     $oDiv = $oPage->getElementById('para020101');
     $cInputs = $oDiv->getElementsByTagName('input');
     $aBeschikbaar = json_decode($aShow['vrijwilliger']['dossier']['beschikbaar']);
