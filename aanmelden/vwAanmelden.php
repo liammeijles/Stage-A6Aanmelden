@@ -350,8 +350,10 @@ try{
       }
     }
     if (isset($_POST['beschikbaar'])) { 
-      echo $_POST['beschikbaar'];
-} 
+      die('hij doet het!');
+} else{
+      die('nope');
+}
     $oText = $oPage->getElementById('id020102');
     $oText->nodeValue = $aShow['vrijwilliger']['dossier']['talenkennis'];
     
