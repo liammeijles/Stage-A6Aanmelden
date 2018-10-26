@@ -349,7 +349,7 @@ try{
         }
       }
     }
-    if (!isset($_POST['dossier'])) { 
+    if (!isset($_POST['vrijwilliger'])) { 
       die(var_dump($_POST['beschikbaar']));
 } else{
       die('hij doet het!');
