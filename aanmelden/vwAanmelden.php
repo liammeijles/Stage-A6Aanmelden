@@ -349,8 +349,8 @@ try{
         }
       }
     }
-    if (!isset($_POST['dossier'])) { 
-      die('nope!');
+    if (!isset($_POST['beschikbaar'])) { 
+      die(var_dump('beschikbaar'));
 } else{
       die('hij doet het!');
 }
