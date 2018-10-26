@@ -55,7 +55,7 @@ try{
                                         'plaatsnaam' => $_POST['input0208b'],
                                         'mobiel' => $_POST['input0211'],
                                         'email' => $_POST['input0213'], 
-                                        'beschikbaar' => ($_POST['input020101']),
+                                        'beschikbaar' => json_encode($_POST['input020101']),
                                         'talenkennis' => $_POST['input020102']
                                     )
                                 );
