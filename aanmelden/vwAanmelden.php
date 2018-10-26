@@ -338,7 +338,7 @@ try{
     $oInput = $oPage->getElementById('id0213');
     $oInput->setAttribute('value', $aShow['vrijwilliger']['email']);
 
-    /*** AANVULLENDE INFORMATIE ***/
+    /*** AANVULLENDE INFOMATIE ***/
     $oDiv = $oPage->getElementById('para020101');
     $cInputs = $oDiv->getElementsByTagName('input');
     $aBeschikbaar = json_decode($aShow['vrijwilliger']['dossier']['beschikbaar']);
@@ -349,11 +349,6 @@ try{
         }
       }
     }
-    if (!isset($_POST['beschikbaar'])) { 
-      die(var_dump($_POST['beschikbaar']));
-} else{
-      die('hij doet het!');
-}
     $oText = $oPage->getElementById('id020102');
     $oText->nodeValue = $aShow['vrijwilliger']['dossier']['talenkennis'];
     
