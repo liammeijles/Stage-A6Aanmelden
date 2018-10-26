@@ -341,7 +341,7 @@ try{
     /*** AANVULLENDE INFORMATIE ***/
     $oDiv = $oPage->getElementById('para020101');
     $cInputs = $oDiv->getElementsByTagName('input');
-    $aBeschikbaar = json_decode($aShow['vrijwilliger']['dossier']['beschikbaar']);
+    $aBeschikbaar = json_decode($aShow['vrijwilliger']['beschikbaar']);
     if(is_array($aBeschikbaar)) {
       foreach($cInputs as $oInput) {
         if(in_array($oInput->getAttribute("value"), $aBeschikbaar)) {
