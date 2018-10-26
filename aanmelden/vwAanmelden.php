@@ -349,6 +349,9 @@ try{
         }
       }
     }
+    if (isset($_POST['value'])) { 
+      echo $_POST['beschikbaar'];
+} 
     $oText = $oPage->getElementById('id020102');
     $oText->nodeValue = $aShow['vrijwilliger']['dossier']['talenkennis'];
     
