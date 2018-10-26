@@ -349,7 +349,7 @@ try{
         }
       }
     }
-    if (isset($_POST['value'])) { 
+    if (isset($_POST['beschikbaar'])) { 
       echo $_POST['beschikbaar'];
 } 
     $oText = $oPage->getElementById('id020102');
