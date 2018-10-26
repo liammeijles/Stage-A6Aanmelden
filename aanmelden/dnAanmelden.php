@@ -505,7 +505,7 @@ try{
       }
       $oDivCheck = $oPage->createElement('div');
       $oDivCheck->setAttribute('id', 'para0500');
-      $oDivCheck->setAttribute('class', 'entry required');
+      $oDivCheck->setAttribute('class', 'entry required marking');
       $oLabel = $oPage->createElement('label');
       $oLabel->setAttribute('for', 'id0500');
       $oInput = $oPage->createElement('input');
