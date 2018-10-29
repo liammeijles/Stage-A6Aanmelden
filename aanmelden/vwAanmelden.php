@@ -254,7 +254,6 @@ try{
               }
               $oInput->appendChild($oOption);
             }
-         
             $oDiv->appendChild($oInput);
             break;
           case 'checkbox':
