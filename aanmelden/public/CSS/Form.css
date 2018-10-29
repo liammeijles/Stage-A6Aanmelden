@@ -6,6 +6,9 @@ font-family: "PT Sans", sans-serif;
 font-size: 16px;
 line-height: 28px; 
 }
+.form{
+  background-color: #3c2351;
+}
 h1, h2, h3, h4, h5, ul, p {
    margin:0;
    padding:0; 
