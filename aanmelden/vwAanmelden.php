@@ -332,7 +332,7 @@ try{
     $oInputCheck->setAttribute('id', 'id0500');
     $oInputCheck->setAttribute('type', 'checkbox');
     $oInputCheck->setAttribute('name', 'input0500');
-    $oInputCheck->setAttribute('class', 'required');
+    $oInputCheck->setAttribute('class', 'required marking');
     $oInputCheck->setAttribute('value', 'on');
     $oLabelCheck->appendChild($oInputCheck);
     $oLabelCheck->appendChild($oPage->createTextNode('Hiermee bevestig ik het formulier volledig naar waarheid te hebben ingevuld en dat deze aanmelding aan Budgetmaatjes 070 verzonden kan worden.'));
