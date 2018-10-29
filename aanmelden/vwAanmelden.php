@@ -108,185 +108,16 @@ try{
       throw new Exception($aMessage['message'], $aMessage['code']);
     }
     if(isset($_POST['input0500']) && $_POST['input0500']=='on') {
-      $oMailHTML = new webHTML('bevestigingsAanmeldingVrijwilligerMailHTML');
-      if($sPlek == "stage") {
-        $hForm = new webHTML("stagiaireAanmeldenHTML");
-        $aVragenlijsten = $oSoap->GetVragenlijsten(207);
-      } elseif($aAanmelding['status'] == "aanvullen") {
-        $hForm = new webHTML("vrijwilligerAanvullenHTML");
-        $aVragenlijsten = $oSoap->GetVragenlijsten(180);
-      } else {
-        $hForm = new webHTML("vrijwilligerAanmeldenHTML");
-        $aVragenlijsten = $oSoap->GetVragenlijsten(203);
-      }
-      
-      foreach($aVragenlijsten as $aVragenlijst){
-        $aFormArray['vragenlijst'][$aVragenlijst['vragenlijst']['vragenlijst']]['vragenlijst'] = array('vragenlijst' => $aVragenlijst['vragenlijst']['vragenlijst']);
-        foreach($aVragenlijst['vragen'] as $aVraag){
-          $aFormArray['vragenlijst'][$aVragenlijst['vragenlijst']['vragenlijst']]['vragen'][] = array('vraag' => $aVraag['vraag'],
-                                            'antwoord' => $_POST['input_vraag_'.$aVragenlijst['vragenlijst']['vragenlijst'].'_'.$aVraag['vraag']]
-                                          );
-        }
-      }
-      $cFieldset = $hForm->documentElement->getElementsByTagName("fieldset");
-      $oSpanTables = $oMailHTML->getElementById('tables');
-      foreach ($cFieldset as $oFieldset) {
-        if($oFieldset->getElementsByTagName('fieldset')->length < 1 && ($oFieldset->getElementsByTagName('label')->length > 0 || strtolower($oFieldset->getElementsByTagName('legend')->item(0)->nodeValue) == 'huisgenoten')){
-          $oTable = $oMailHTML->createElement('table');
-          $oTHead = $oMailHTML->createElement('thead');
-          $oTr = $oMailHTML->createElement('tr');
-          $oTh = $oMailHTML->createElement('th', $oFieldset->getElementsByTagName('legend')->item(0)->nodeValue);
-          $oTh->setAttribute('colspan', '2');
-          $oTr->appendChild($oTh);
-          $oTHead->appendChild($oTr);
-          $oTable->appendChild($oTHead);
-          $oTBody = $oMailHTML->createElement('tbody');
-          if(strtolower($oFieldset->getElementsByTagName('legend')->item(0)->nodeValue) == 'huisgenoten'){
-            $oTh->setAttribute('colspan', '6');
-            $oTr = $oMailHTML->createElement('tr');
-            $oTh1 = $oMailHTML->createElement('th', 'Naam');
-            $oTh2 = $oMailHTML->createElement('th', 'Tussenvoegsel');
-            $oTh3 = $oMailHTML->createElement('th', 'Achternaam');
-            $oTh4 = $oMailHTML->createElement('th', 'Geslacht');
-            $oTh5 = $oMailHTML->createElement('th', 'Geboortedatum');
-            $oTh6 = $oMailHTML->createElement('th', 'Relatie');
-            $oTr->appendChild($oTh1);
-            $oTr->appendChild($oTh2);
-            $oTr->appendChild($oTh3);
-            $oTr->appendChild($oTh4);
-            $oTr->appendChild($oTh5);
-            $oTr->appendChild($oTh6);
-            $oTBody->appendChild($oTr);
-            for($i=1; $i<=$_POST['huisgenotenAantal']; $i++) {
-              if(!empty($_POST['input030'.$i.'0101'])){
-                $oTr = $oMailHTML->createElement('tr');
-                for($j = 1; $j<=5;$j++){
-                  $oTd = $oMailHTML->createElement('td', utf8_encode($_POST['input030'.$i.'010'.$j]));
-                  $oTr->appendChild($oTd);
-                }
-                $aRelaties = $oSoap->getRelaties();
-                foreach ($aRelaties as $aRelatie) {
-                  if($_POST['input030'.$i.'0106']==$aRelatie['value']){
-                    $oTd = $oMailHTML->createElement('td', $aRelatie['waarde']);
-                    $oTr->appendChild($oTd);
-                  }
-                }
-                $oTBody->appendChild($oTr);
-              }
-            }
-          } else {
-            $cLabel = $oFieldset->getElementsByTagName("label");
-            foreach ($cLabel as $oLabel) {
-              $oTr = $oMailHTML->createElement('tr');
-              $oTh = $oMailHTML->createElement('th', $oLabel->nodeValue);
-              $oTr->appendChild($oTh);
-              $sString = preg_replace("/id/","input",$oLabel->getAttribute("for"));
-              switch(strToLower($oLabel->nodeValue)) {
-                case "geslacht":
-                  $oTd = $oMailHTML->createElement('td', $_POST['input0203']);
-                  $oTr->appendChild($oTh);
-                  $oTr->appendChild($oTd);
-                  $oTBody->appendChild($oTr);
-                  break;
-                case "beschikbaar":  
-                  $oTd = $oMailHTML->createElement('td');
-                  $oTab = $oMailHTML->createElement('table');
-                  $oTrTab = $oMailHTML->createElement('tr');
-                  $oThTab = $oMailHTML->createElement('th', "&nbsp;");
-                  $oTrTab->appendChild($oThTab);
-                  $oThTab = $oMailHTML->createElement('th', "ochtend");
-                  $oTrTab->appendChild($oThTab);
-                  $oThTab = $oMailHTML->createElement('th', "middag");
-                  $oTrTab->appendChild($oThTab);
-                  $oThTab = $oMailHTML->createElement('th', "avond");
-                  $oTrTab->appendChild($oThTab);
-                  $oTab->appendChild($oTrTab);
-                  $aDays = array("A" => "maa", "B" => "din", "C" => "woe", "D" => "don", "E" => "vrij", "F" => "zat", "G" => "zon");
-                  
-                  foreach($aDays as $kDay => $sDay) {
-                    $aBeschikbaar = $_POST[$sString];
-                    $oTrTab = $oMailHTML->createElement('tr');
-                    $oThTab = $oMailHTML->createElement('th', $sDay);
-                    $oTrTab->appendChild($oThTab);
-                    for($i = 1; $i < 4; $i++) {
-                      $oTdTab = $oMailHTML->createElement('td', in_array(($kDay . $i), $aBeschikbaar) ? "x" : "&nbsp;");
-                      $oTrTab->appendChild($oTdTab);                    
-                    } 
-                    $oTab->appendChild($oTrTab);
-                  }
-                  $oTd->appendChild($oTab);
-                break;
-                default: 
-                  $sValue = $_POST[$sString];
-                  $oTd = $oMailHTML->createElement('td', utf8_encode($sValue));
-                  break;
-              }
-              $oTr->appendChild($oTd);
-              $oTBody->appendChild($oTr);
-            }
-          }
-          $oTable->appendChild($oTBody);
-          $oSpanTables->appendChild($oTable);
-        }
-      }
-      
-      foreach($aVragenlijsten as $aVragenlijst){
-        $oTable = $oMailHTML->createElement('table');
-        $oTHead = $oMailHTML->createElement('thead');
-        $oTr = $oMailHTML->createElement('tr');
-        $oTh = $oMailHTML->createElement('th', $aVragenlijst['vragenlijst']['vragenlijst_omschrijving']);
-        $oTh->setAttribute('colspan', '2');
-        $oTr->appendChild($oTh);
-        $oTHead->appendChild($oTr);
-        $oTable->appendChild($oTHead);
-        $oTBody = $oMailHTML->createElement('tbody'); 
-        foreach($aVragenlijst['vragen'] as $aVraag){
-          $oTr = $oMailHTML->createElement('tr');
-          $oTh = $oMailHTML->createElement('th', $aVraag['omschrijving']);
-          $aAntwoorden = $_POST['antwoorden'];
-          if(is_array($aAntwoorden[$aVragenlijst['vragenlijst']['vragenlijst']][$aVraag['vraag']])){
-            $oTd = $oMailHTML->createElement('td', implode(',', utf8_encode($aAntwoorden[$aVragenlijst['vragenlijst']['vragenlijst']][$aVraag['vraag']])));
-          } else {
-            $aLines = textToLines($aAntwoorden[$aVragenlijst['vragenlijst']['vragenlijst']][$aVraag['vraag']]);
-            $oTd = $oMailHTML->createElement('td');
-            foreach($aLines as $sLine){
-              $oP = $oMailHTML->createElement('p', $sLine);
-              $oTd->appendChild($oP);
-            }
-          }                               
-          $oTr->appendChild($oTh);
-          $oTr->appendChild($oTd);
-          $oTBody->appendChild($oTr);
-        }
-        $oTable->appendChild($oTBody);
-        $oSpanTables->appendChild($oTable);
-      }
-      /*** VULLEN AANHEF ***/
+      $oPage = new DomDocument();
+      $oPage->loadHTMLFile("public/HTML/aanmeldingMelding.html");
+      $oMessage = $oPage->getElementById("message"); 
 
-
-      $oNaam = $oMailHTML->getElementById('__NAAM__');
-      if($oNaam) {
-        $oNaam->nodeValue = toUTF8($aAanmelding['personen']['vrijwilliger']['naam']);
-      }
-      $sSubject = 'Dank voor je aanmelding bij Budgetmaatjes 070';
-      $oMail = new webMail();
-      $oMail->setHTML($oMailHTML->saveMailHTML());
-      $oMail->setFrom($sFrom);
-      $oMail->setReplyTo($sFrom);
-      $oMail->setSubject($sSubject);
-      $oPage = new webHTML('AanmeldingMelding');
-      $oMessage = $oPage->getElementById("message");
-
-      if($oMail->send(array($sEmail))){
-        if($aAanmelding['status'] == "nieuw") {
-          $oP = $oPage->createElement('p', 'Fijn dat je bij ons maatje wilt worden. Een van de casemanagers neemt binnenkort telefonisch contact met je op.');
-        } elseif($aAanmelding['status'] == "aanvullen"){
-          $oP = $oPage->createElement('p', 'Bedankt voor het aanvullen van je dossier.');
-        }else {
-          $oP = $oPage->createElement('p', 'Fijn dat je je dossier hebt aangevuld. Een van de casemanagers neemt binnenkort contact met je op.');
-        }
-      } else {
-        $oP = $oPage->createElement('p', 'Er is een fout opgetreden met het vesturen van de aanmelding. Probeert u het later nog eens.');
+      if($aAanmelding['status'] == "nieuw") {
+        $oP = $oPage->createElement('p', 'Fijn dat je bij ons maatje wilt worden. Een van de intakers neemt binnenkort telefonisch contact met je op.');
+      } elseif($aAanmelding['status'] == "aanvullen"){
+        $oP = $oPage->createElement('p', 'Bedankt voor het aanvullen van je dossier.');
+      }else {
+        $oP = $oPage->createElement('p', 'Fijn dat je je dossier hebt aangevuld. Een van de intakers neemt binnenkort contact met je op.');
       }
       $oMessage->appendChild($oP);
     } else {
@@ -502,7 +333,7 @@ try{
     $oInputCheck->setAttribute('id', 'id0500');
     $oInputCheck->setAttribute('type', 'checkbox');
     $oInputCheck->setAttribute('name', 'input0500');
-    $oInputCheck->setAttribute('class', 'required');
+    $oInputCheck->setAttribute('class', 'required marking');
     $oInputCheck->setAttribute('value', 'on');
     $oLabelCheck->appendChild($oInputCheck);
     $oLabelCheck->appendChild($oPage->createTextNode('Hiermee bevestig ik het formulier volledig naar waarheid te hebben ingevuld en dat deze aanmelding aan Budgetmaatjes 070 verzonden kan worden.'));
